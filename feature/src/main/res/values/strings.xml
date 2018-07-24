@@ -1,0 +1,7 @@
+<resources>
+<string name="title_home">SpaceX</string>
+    <string name="title_Missions">Missions</string>
+    <string name="title_Notifications">Notifications</string>
+    <string name="title_Stats">Stats</string>
+    <string name="title_Settings">Settings</string>
+</resources>
