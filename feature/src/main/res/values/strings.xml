@@ -1,7 +1,13 @@
 <resources>
-<string name="title_home">SpaceX</string>
+    <string name="title_home">SpaceX</string>
     <string name="title_Missions">Missions</string>
     <string name="title_Notifications">Notifications</string>
     <string name="title_Stats">Stats</string>
     <string name="title_Settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Missions_fragment">Missions</string>
+    <string name="Notifications_fragment">Hello blank fragment</string>
+    <string name="Stats_fragment">Hello blank fragment</string>
+    <string name="Settings_fragment">Hello blank fragment</string>
 </resources>

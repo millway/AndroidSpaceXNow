@@ -1,8 +1,10 @@
 package com.mine.milkyway.spacexnow.feature;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -16,22 +18,20 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragmet = null  ;
+
             int id = item.getItemId();
             if (id == R.id.navigation_missions) {
-                mTextMessage.setText(R.string.title_Missions);
-                return true;
+                fragmet = new MissionsFragment();
             } else if (id == R.id.navigation_notifications) {
-                mTextMessage.setText(R.string.title_Notifications);
-                return true;
+                fragmet = new NotificationsFragment();
             } else if (id == R.id.navigation_stats) {
-                mTextMessage.setText(R.string.title_Stats);
-                return true;
+                fragmet = new StatsFragment();
             } else if (id == R.id.navigation_Settings) {
-                mTextMessage.setText(R.string.title_Settings);
-                return true;
+                fragmet = new SettingsFragment();
             }
 
-            return false;
+            return loadFragment(fragmet);
         }
     };
 
@@ -40,9 +40,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+        loadFragment(new MissionsFragment());
+
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    private  boolean loadFragment(Fragment fragment){
+        //switching fragment
+
+        if (fragment != null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_Container,fragment).commit();
+            return  true;
+        }
+
+        return  false;
+    }
 }
