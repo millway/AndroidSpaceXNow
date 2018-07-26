@@ -12,5 +12,6 @@
     <string name="Settings_fragment">Hello blank fragment</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Upcoming_Mission_PHolder">Upcoming Mission Place Holder</string>
+    <string name="Past_Mission_PHolder">Past Mission Place Holder</string>
 </resources>

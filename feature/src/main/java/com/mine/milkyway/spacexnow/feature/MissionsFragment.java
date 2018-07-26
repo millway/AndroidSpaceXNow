@@ -68,7 +68,9 @@ public class MissionsFragment extends Fragment {
         }
     }
 
-
+//    private PagerAdapter buildAdapter() {
+//        return(new Missions_PagerAdapter(getActivity(), getChildFragmentManager()));
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -76,22 +78,20 @@ public class MissionsFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
-        return inflater.inflate(R.layout.fragment_missions, container, false);
-    }
+        View view =  inflater.inflate(R.layout.fragment_missions, container, false);
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
-        TabLayout tabLayout = (TabLayout) getView().findViewById(R.id.tab_layout);
+        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Upcoming"));
         tabLayout.addTab(tabLayout.newTab().setText("Past"));
-        int s =tabLayout.getTabCount();
+        tabLayout.setTabGravity(tabLayout.GRAVITY_FILL);
+
         //tabLayout.setTabGravity(toolbar);
 
-        final ViewPager viewPager = (ViewPager)getView().findViewById(R.id.Pager_Mission);
-        final PagerAdapter adapter = new Missions_PagerAdapter(myContext.getSupportFragmentManager(),tabLayout.getTabCount()); // PagerAdapter(myContext.getSupportFragmentManager(),s);
+        final ViewPager viewPager = (ViewPager) view.findViewById(R.id.Pager_Mission);
+        final PagerAdapter adapter = new Missions_PagerAdapter(getChildFragmentManager(),tabLayout.getTabCount()); // PagerAdapter(myContext.getSupportFragmentManager(),s);
         viewPager.setAdapter(adapter);
+        //viewPager.setAdapter(buildAdapter());
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
             @Override
@@ -109,6 +109,15 @@ public class MissionsFragment extends Fragment {
 
             }
         });
+
+        return  view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+
 
     }
 

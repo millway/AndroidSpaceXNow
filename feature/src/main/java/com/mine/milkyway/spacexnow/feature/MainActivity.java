@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
 
+    MissionsFragment missionsFragment = new MissionsFragment();
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -22,13 +23,17 @@ public class MainActivity extends AppCompatActivity {
 
             int id = item.getItemId();
             if (id == R.id.navigation_missions) {
-                fragmet = new MissionsFragment();
+                fragmet = missionsFragment;
+                setTitle(R.string.title_Missions);
             } else if (id == R.id.navigation_notifications) {
                 fragmet = new NotificationsFragment();
+                setTitle(R.string.title_Notifications);
             } else if (id == R.id.navigation_stats) {
                 fragmet = new StatsFragment();
+                setTitle(R.string.title_Stats);
             } else if (id == R.id.navigation_Settings) {
                 fragmet = new SettingsFragment();
+                setTitle(R.string.title_Settings);
             }
 
             return loadFragment(fragmet);
@@ -44,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
