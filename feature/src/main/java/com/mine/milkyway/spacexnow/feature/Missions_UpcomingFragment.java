@@ -4,9 +4,15 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -26,8 +32,11 @@ public class Missions_UpcomingFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private RecyclerView mRecyclerView;
     private OnFragmentInteractionListener mListener;
+    private Missions_RecyclerView_ItemAdapter missions_recyclerView_itemAdapter;
+    List<Missions_RecyclerView_Item> missions_recyclerView_items;
+
 
     public Missions_UpcomingFragment() {
         // Required empty public constructor
@@ -58,13 +67,37 @@ public class Missions_UpcomingFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_missions__upcoming, container, false);
+        View view =  inflater.inflate(R.layout.fragment_missions__upcoming, container, false);
+
+        missions_recyclerView_items = new ArrayList<>();
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.upcoming_mission_recycler_view);
+
+        //set this to fixed size to improve performance if the the content do not change the layout.
+        mRecyclerView.setHasFixedSize(true);
+
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        for (int i = 0 ; i <20 ; i++)
+        missions_recyclerView_items.add(
+                new Missions_RecyclerView_Item(i,R.drawable.iridium_mission_8,"SRS Moon","SATCOM",
+                "Kenedy Space Station",
+                "GTO"
+                ,"2018.8.14"
+                ,"3 days, 10 hours, 4 minutes")
+        );
+
+
+
+        missions_recyclerView_itemAdapter = new Missions_RecyclerView_ItemAdapter(view.getContext(),missions_recyclerView_items);
+        mRecyclerView.setAdapter(missions_recyclerView_itemAdapter);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

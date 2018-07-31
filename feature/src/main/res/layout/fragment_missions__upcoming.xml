@@ -5,10 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".Missions_UpcomingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/Upcoming_Mission_PHolder" />
+        android:id="@+id/upcoming_mission_recycler_view"
+        android:scrollbars="horizontal">
+
+    </android.support.v7.widget.RecyclerView>
+
 
 </FrameLayout>
