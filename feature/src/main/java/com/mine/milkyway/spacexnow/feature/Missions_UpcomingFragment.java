@@ -95,7 +95,7 @@ public class Missions_UpcomingFragment extends Fragment {
 
 
 
-        missions_recyclerView_itemAdapter = new Missions_RecyclerView_ItemAdapter(view.getContext(),missions_recyclerView_items);
+        missions_recyclerView_itemAdapter = new Missions_RecyclerView_ItemAdapter(getActivity().getApplicationContext(),missions_recyclerView_items);
         mRecyclerView.setAdapter(missions_recyclerView_itemAdapter);
         return view;
     }

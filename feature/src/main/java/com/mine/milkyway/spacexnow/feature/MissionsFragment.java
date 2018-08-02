@@ -41,6 +41,7 @@ public class MissionsFragment extends Fragment {
         // Required empty public constructor
     }
 
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -78,7 +79,7 @@ public class MissionsFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
-        View view =  inflater.inflate(R.layout.fragment_missions, container, false);
+        View view =  inflater.inflate(R.layout.fragment_missions, null  , false);
 
 
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);

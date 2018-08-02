@@ -13,13 +13,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data
-                    android:host="MilkyWay.Mine.Com"
+                    android:host="milkyway.mine.com"
                     android:pathPattern="/.*"
                     android:scheme="https" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

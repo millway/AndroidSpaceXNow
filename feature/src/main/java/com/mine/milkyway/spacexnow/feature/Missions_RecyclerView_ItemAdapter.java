@@ -28,7 +28,8 @@ public class Missions_RecyclerView_ItemAdapter extends RecyclerView.Adapter<Miss
     public Missions_RecyclerView_ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View   view = inflater.inflate(R.layout.missions_list_item_template,null  );
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.missions_list_item_template,parent,false);
+        //View   view = inflater.inflate(R.layout.missions_list_item_template,null  );
         return new Missions_RecyclerView_ItemViewHolder(view);
     }
 

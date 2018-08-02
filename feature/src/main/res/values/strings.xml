@@ -5,13 +5,47 @@
     <string name="title_Stats">Stats</string>
     <string name="title_Settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="Missions_fragment">Missions</string>
     <string name="Notifications_fragment">Hello blank fragment</string>
     <string name="Stats_fragment">Hello blank fragment</string>
     <string name="Settings_fragment">Hello blank fragment</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="Upcoming_Mission_PHolder">Upcoming Mission Place Holder</string>
-    <string name="Past_Mission_PHolder">Past Mission Place Holder</string>
+
+
+
+    <!--SETTINGS STRING-->
+    <string name="settings_Header_SpaceXNow">SUPPORT SPACEXNOW</string>
+    <string name="Settings_chat_on_discord">CHAT ON DISCORD</string>
+    <string name="settings_follow_on_twitter">FOLLOW ON TWITTER</string>
+    <string name="settings_subscribe_on_redit">SUBSCRIBE ON REDDIT</string>
+    <string name="settings_revieew_on_googleplay">REVIEW ON GOOGLE PLAY</string>
+    <string name="settings_contribute_on_patreon">CONTRIBUTE ON PATREON</string>
+
+    <!--SETTINGS STRING-->
+    <string name="settings_Header_DateTime">DATE TIME SETTINGS</string>
+    <string name="settings_Time_UTC">Use UTC</string>
+    <string name="settings_Time_Use_24_Hr">Use 24 hour time</string>
+    <!--SETTINGS STRING-->
+    <string name="settings_Header_Notificatio">NOTIFICATION SETTINGS</string>
+    <string name="settings_toggle_manifet_change">Manifest changes</string>
+    <string name="settings_toggle_upcoming_launch">Upcoming Launches</string>
+    <string name="settings_toggle_new_twitts">New Tweets</string>
+    <string name="settings_toggle_reddit_threads">New Reddit Threads</string>
+    <string name="settings_toggle_popular_reddit_thread">Popular Reddit Threads</string>
+    <string name="settings_toggle_new_youtube">New Youtube Videos</string>
+    <string name="settings_toggle_webcasts">Webcasts started</string>
+    <string name="settings_toggle_flickr">New Flickr Photos</string>
+    <string name="settings_toggle_desable_during_launch">Disable During Launch</string>
+    <string name="settings_toggle_notifcation_sound">Notification Sound</string>
+    <string name="settings_toggle_notification_vibrate">Notification Vibrate</string>
+    <!--<string name="settings_"></string>-->
+    <!--<string name="settings_"></string>-->
+    <!--<string name="settings_"></string>-->
+    <!--<string name="settings_"></string>-->
+    <!--<string name="settings_"></string>-->
+    <!--<string name="settings_"></string>-->
+
+
+
+
 </resources>

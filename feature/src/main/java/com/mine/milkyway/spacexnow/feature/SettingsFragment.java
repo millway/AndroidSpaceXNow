@@ -1,12 +1,12 @@
 package com.mine.milkyway.spacexnow.feature;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -26,6 +26,11 @@ public class SettingsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+//    Settings page buttons List
+
+    //Settings Support SpaceXNow
+    private Button Support_Discord,Support_FollowOnTwitter,Support_Reddit,Support_GooglePlay,Support_Patreon;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -58,6 +63,10 @@ public class SettingsFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        //Support_Discord = (Button) getView().findViewById(R.id)
+
+
     }
 
     @Override
