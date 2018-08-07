@@ -4,9 +4,15 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 
 /**
@@ -22,6 +28,10 @@ public class NotificationsFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private RecyclerView mRecyclerView;
+    private List<Notifications_RecyclerView_Item> notifications_recyclerView_items;
+    private Notifications_RecyclerView_ItemAdapter notifications_recyclerView_itemAdapter;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -64,7 +74,29 @@ public class NotificationsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notifications, container, false);
+        View view  = inflater.inflate(R.layout.fragment_notifications, container, false);
+
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.notification_recycler_view);
+        notifications_recyclerView_items = new ArrayList<>();
+
+        mRecyclerView.setHasFixedSize(false);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        for (int i = 0; i<15;i++){
+            notifications_recyclerView_items.add(new Notifications_RecyclerView_Item(
+                    UUID.randomUUID().toString(),R.drawable.notifications_redit,
+                    "Popular thread (r/spacex) Previously flown Falcon 9 Block 5 and Merah Puth streak east over the Atlantic Ocean as I stand watching from the coast of Satellite Beach. (Marcus Cote/Space Coast Times)"
+                    , "12 hours ago"));
+
+
+
+        }
+
+        notifications_recyclerView_itemAdapter = new Notifications_RecyclerView_ItemAdapter(view.getContext(), notifications_recyclerView_items);
+        mRecyclerView.setAdapter(notifications_recyclerView_itemAdapter);
+
+        return  view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -80,7 +80,7 @@ public class Missions_PastFragment extends Fragment {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.past_mission_recycler_view);
 
         //set this to fixed size to improve performance if the the content do not change the layout.
-        mRecyclerView.setHasFixedSize(false);
+        mRecyclerView.setHasFixedSize(true);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
